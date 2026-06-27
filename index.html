@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ParkWise | Smart Parking</title>
+
+    <meta name="description" content="Reserve parking before you arrive.">
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <!-- Leaflet Maps -->
+
+    <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ========================================= -->
+<!-- Loader -->
+<!-- ========================================= -->
+
+<div id="loader">
+
+    <div class="loaderBox">
+
+        <i class="fa-solid fa-square-parking"></i>
+
+        <h1>ParkWise</h1>
+
+        <p>Finding Smart Parking...</p>
+
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- Navbar -->
+<!-- ========================================= -->
+
+<nav>
+
+<div class="logo">
+
+<i class="fa-solid fa-square-parking"></i>
+
+<span>ParkWise</span>
+
+</div>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#map">Map</a></li>
+
+<li><a href="#features">Features</a></li>
+
+<li><a href="#pricing">Pricing</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<div class="buttons">
+
+<button class="loginBtn">
+
+Login
+
+</button>
+
+<button class="signupBtn">
+
+Sign Up
+
+</button>
+
+</div>
+
+</nav>
+
+<!-- ========================================= -->
+<!-- Hero -->
+<!-- ========================================= -->
+
+<section class="hero">
+
+<div class="left">
+
+<div class="badge">
+
+🚗 India's Smart Parking Platform
+
+</div>
+
+<h1>
+
+Never Waste Time
+
+<br>
+
+Looking For
+
+<span>Parking</span>
+
+</h1>
+
+<p>
+
+Reserve a parking spot before reaching your destination.
+
+Save fuel.
+
+Save time.
+
+Reduce traffic.
+
+</p>
+
+<div class="heroButtons">
+
+<button id="findParking">
+
+Find Parking
+
+</button>
+
+<button class="learnMore">
+
+Learn More
+
+</button>
+
+</div>
+
+<div class="stats">
+
+<div>
+
+<h2>15K+</h2>
+
+<p>Drivers</p>
+
+</div>
+
+<div>
+
+<h2>850+</h2>
+
+<p>Parking Lots</p>
+
+</div>
+
+<div>
+
+<h2>12</h2>
+
+<p>Cities</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="phone">
+
+<div class="phoneHeader">
+
+📍 Nearby Parking
+
+</div>
+
+<div class="phoneMap">
+
+<div class="marker green"></div>
+
+<div class="marker red"></div>
+
+<div class="marker green two"></div>
+
+<div class="marker green three"></div>
+
+</div>
+
+<div class="phoneCard">
+
+<h3>Connaught Place</h3>
+
+<p>120 m Away</p>
+
+<div class="price">
+
+₹40/hr
+
+</div>
+
+<button>
+
+Reserve Now
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Live Map -->
+<!-- ========================================= -->
+
+<section class="mapSection">
+
+<div class="sectionTitle">
+
+<h2>
+
+Find Parking Near You
+
+</h2>
+
+<p>
+
+Search and reserve parking instantly.
+
+</p>
+
+</div>
+
+<div class="searchBar">
+
+<input
+
+type="text"
+
+placeholder="Search Location...">
+
+<button>
+
+Search
+
+</button>
+
+</div>
+
+<div id="map"></div>
+<!-- ========================================= -->
+<!-- Nearby Parking -->
+<!-- ========================================= -->
+
+<div class="parkingCards">
+
+    <div class="parkingCard">
+
+        <div class="status available"></div>
+
+        <div class="parkingInfo">
+
+            <h3>Connaught Place Parking</h3>
+
+            <p>120m • ₹40/hr • ⭐ 4.8</p>
+
+        </div>
+
+        <button class="reserveBtn" data-name="Connaught Place Parking">
+
+            Reserve
+
+        </button>
+
+    </div>
+
+    <div class="parkingCard">
+
+        <div class="status occupied"></div>
+
+        <div class="parkingInfo">
+
+            <h3>Rajiv Chowk Parking</h3>
+
+            <p>250m • ₹30/hr • ⭐ 4.4</p>
+
+        </div>
+
+        <button class="fullBtn">
+
+            Full
+
+        </button>
+
+    </div>
+
+    <div class="parkingCard">
+
+        <div class="status available"></div>
+
+        <div class="parkingInfo">
+
+            <h3>DLF Mall Parking</h3>
+
+            <p>450m • ₹50/hr • ⭐ 4.9</p>
+
+        </div>
+
+        <button class="reserveBtn" data-name="DLF Mall Parking">
+
+            Reserve
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Features -->
+<!-- ========================================= -->
+
+<section id="features">
+
+<div class="sectionTitle">
+
+<h2>
+
+Why Choose ParkWise?
+
+</h2>
+
+<p>
+
+Smart Parking. Less Traffic. More Convenience.
+
+</p>
+
+</div>
+
+<div class="featureGrid">
+
+<div class="feature">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<h3>
+
+Live GPS
+
+</h3>
+
+<p>
+
+Locate nearby parking in real time.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-car"></i>
+
+<h3>
+
+Reserve Instantly
+
+</h3>
+
+<p>
+
+Book your parking before arriving.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-credit-card"></i>
+
+<h3>
+
+Cashless Payment
+
+</h3>
+
+<p>
+
+Quick and secure online payment.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-leaf"></i>
+
+<h3>
+
+Eco Friendly
+
+</h3>
+
+<p>
+
+Reduce fuel consumption and traffic.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Statistics -->
+<!-- ========================================= -->
+
+<section class="statistics">
+
+<div class="statCard">
+
+<h2 id="driversCount">
+
+15000
+
+</h2>
+
+<p>
+
+Happy Drivers
+
+</p>
+
+</div>
+
+<div class="statCard">
+
+<h2 id="parkingCount">
+
+850
+
+</h2>
+
+<p>
+
+Parking Lots
+
+</p>
+
+</div>
+
+<div class="statCard">
+
+<h2>
+
+98%
+
+</h2>
+
+<p>
+
+Customer Satisfaction
+
+</p>
+
+</div>
+
+<div class="statCard">
+
+<h2>
+
+12
+
+</h2>
+
+<p>
+
+Cities Covered
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Pricing -->
+<!-- ========================================= -->
+
+<section id="pricing">
+
+<div class="sectionTitle">
+
+<h2>
+
+Pricing
+
+</h2>
+
+<p>
+
+Simple and affordable.
+
+</p>
+
+</div>
+
+<div class="pricingContainer">
+
+<div class="pricingCard">
+
+<h3>
+
+Hourly Parking
+
+</h3>
+
+<h1>
+
+₹40
+
+<span>
+
+/hour</span>
+
+</h1>
+
+<ul>
+
+<li>✔ Reserve Instantly</li>
+
+<li>✔ Live Availability</li>
+
+<li>✔ Cashless Payment</li>
+
+<li>✔ GPS Navigation</li>
+
+<li>✔ Booking History</li>
+
+</ul>
+
+<button>
+
+Book Now
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Testimonials -->
+<!-- ========================================= -->
+
+<section class="testimonials">
+
+<div class="sectionTitle">
+
+<h2>
+
+Loved by Drivers
+
+</h2>
+
+</div>
+
+<div class="testimonialGrid">
+
+<div class="testimonial">
+
+<h3>
+
+Rahul Sharma
+
+</h3>
+
+<p>
+
+★★★★★
+
+</p>
+
+<p>
+
+"Saved me 20 minutes every morning."
+
+</p>
+
+</div>
+
+<div class="testimonial">
+
+<h3>
+
+Aditi Mehra
+
+</h3>
+
+<p>
+
+★★★★★
+
+</p>
+
+<p>
+
+"Simple, clean and super helpful."
+
+</p>
+
+</div>
+
+<div class="testimonial">
+
+<h3>
+
+Arjun Gupta
+
+</h3>
+
+<p>
+
+★★★★★
+
+</p>
+
+<p>
+
+"Would definitely use this daily."
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Contact -->
+<!-- ========================================= -->
+
+<section id="contact">
+
+<h2>
+
+Ready to Park Smarter?
+
+</h2>
+
+<p>
+
+Join thousands of drivers using ParkWise.
+
+</p>
+
+<button>
+
+Download App
+
+</button>
+
+</section>
+
+<!-- ========================================= -->
+<!-- Reservation Modal -->
+<!-- ========================================= -->
+
+<div id="reservationModal">
+
+<div class="modalBox">
+
+<span class="close">
+
+&times;
+
+</span>
+
+<h2>
+
+Reserve Parking
+
+</h2>
+
+<p id="selectedParking">
+
+No parking selected.
+
+</p>
+
+<button id="confirmReservation">
+
+Confirm Booking
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- Footer -->
+<!-- ========================================= -->
+
+<footer>
+
+<div class="footerLogo">
+
+<i class="fa-solid fa-square-parking"></i>
+
+ParkWise
+
+</div>
+
+<p>
+
+Smart Parking For Smart Cities.
+
+</p>
+
+<p>
+
+© 2026 ParkWise. All Rights Reserved.
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
