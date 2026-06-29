@@ -63,11 +63,11 @@ const parkingData=[
 
 {
 
-name:"Connaught Place Parking",
+name:"PLA Shopping Complex",
 
-lat:28.6315,
+lat:29.1443,
 
-lng:77.2167,
+lng: 75.7283,
 
 price:40,
 
@@ -77,11 +77,11 @@ available:true
 
 {
 
-name:"Rajiv Chowk Parking",
+name:"M. C. Colony",
 
-lat:28.6297,
+lat:29.1395,
 
-lng:77.2139,
+lng:75.7411,
 
 price:35,
 
@@ -91,11 +91,11 @@ available:false
 
 {
 
-name:"DLF Mall Parking",
+name:"Rajguru Market",
 
-lat:28.6182,
+lat:29.1492,
 
-lng:77.2234,
+lng:75.7226,
 
 price:50,
 
